@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
-
+:root { 
+  --primary-color:#047aed;
+  --secondary-color:#1c3fa8;
+  --dark-color:#002240;
+  --light-color:#f4f4f4;
+  --success-color:#5cb85c;
+  --error-color:#d9534f;
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -25,9 +32,10 @@ h1,h2 {
 img {
   width:100%;
 }
+/*-- navbar */
 
 .navbar {
-  background-color: #047aed;
+  background-color: var(--primary-color);
   color: #fff;
   height: 60px;
 }
@@ -48,15 +56,90 @@ img {
 .navbar .flex {
   justify-content: space-between;
 }
-.container {
-  max-width:1100px;
-  overflow:auto;
-  margin: 0 auto;
-  padding: 0 40px;
+/*showcase */
+.showcase {
+  color: #fff;
+  background-color: var(--primary-color);
+  height:400px;
+  position: relative;
 }
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+
+.showcase h1 {
+  font-size: 40px;
+  margin:10px 0; 
+  
 }
+.showcase p {
+  line-height: 1.75rem;
+  margin:20px 0;
+}
+.showcase .grid {
+  overflow:visible;
+  grid-template-columns: 55% 45%;
+  gap: 30px;
+  
+}
+.showcase-form {
+  position: relative;
+  top:60px;
+  height:350px;
+  width: 400px;
+  padding:40px;
+z-index: 100;
+}
+.showcase-form .form-control {
+  margin:30px 0;
+}
+.showcase-form input[type="text"],
+.showcase-form input[type="email"] {
+  padding: 3px;
+  border:0;
+  border-bottom: 1px solid #b4becb;
+  width: 100%;
+  font-size: 16px;
+
+}
+.showcase-form input {
+  outline: none;
+}
+.showcase::before,
+.showcase::after {
+  content: '';
+  height: 100px;
+  position:absolute;
+  background-color:#fff;
+  bottom:-70px;
+  right:0;
+  left:0px;
+  transform:skewY(-3deg);
+  -webkit-transform:skewY(-3deg);
+  -moz-transform:skewY(-3deg);
+  -ms-transform:skewY(-3deg);
+}
+/*stats*/
+
+.stats {
+  margin-top:100px;
+}
+.stats-heading {
+  max-width:500px;
+  margin: auto;
+}
+.stats .grid3 h3 {
+  font-size:35px;
+}
+.stats .grid3 p {
+  font-size:20px;
+  font-weight:bold;
+}
+/*cli*/
+.cli .grid {
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows:repeat(2,1fr);
+}
+.cli .grid > *:first-child {
+  grid-column: 1/3;
+  grid-row: 1/span2;
+}
+/*cloud*/
+
